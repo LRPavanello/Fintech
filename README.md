@@ -25,7 +25,7 @@ Pagina web de gestión de un inventario de productos hecha utilizando [Python](h
 1. Clona el repositorio:
 
    ```
-   git clone /home/joshuboshu/Escritorio/Joshua/repositorio-bare.git
+   git clone https://github.com/joshuboshu/docker_project.git
    cd docker_project
     ```
 2. Ejecuta los comandos en una terminal
