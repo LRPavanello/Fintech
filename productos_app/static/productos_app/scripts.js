@@ -3,18 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
     if (form) {
-        // Validación y confirmación al enviar el formulario
-        form.addEventListener("submit", function (e) {
-            const precio = document.getElementById("precio").value;
+        form.addEventListener("submit", function(e) {
+            console.log("Formulario enviado"); // Para depuración
+
+            // Obtener el valor del campo precio
+            const precioInput = document.getElementById("id_precio"); // Asegúrate de que el ID sea correcto
+            const precio = precioInput ? parseFloat(precioInput.value) : NaN;
 
             // Validar que el campo de precio solo acepte números y que el precio sea mayor a 0
             if (isNaN(precio) || precio <= 0) {
                 alert("Por favor, introduce un precio válido.");
-                e.preventDefault();
+                e.preventDefault(); // Evitar el envío del formulario
             } else {
                 // Mostrar mensaje de confirmación antes de agregar el producto
                 if (!confirm("¿Estás seguro de que quieres agregar este producto?")) {
-                    e.preventDefault();
+                    e.preventDefault(); // Evitar el envío del formulario
                 }
             }
         });

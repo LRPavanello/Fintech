@@ -43,4 +43,18 @@ Pagina web de gestión de un inventario de productos hecha utilizando [Python](h
 ## Una vez aquí se pueden realizar todas las acciones que permite la aplicación
 
 ### Lista de productos, podemos agregar mas productos, o bien, ver los detalles o eliminar productos
-    ![](./images/lista.png)
+![](./images/lista.png)
+
+### Podemos agregar un nuevo producto con una descripción y marcar como disponible, o bien, volver al inicio
+![](./images/agregar.png)
+
+### Detalles del producto, podemos agregar caracteristicas y editarlas, en el inicio saldra la descripción a menos que le agreguemos caracteristicas al producto.
+![](./images/detalles.png)
+
+### Podemos agregar una caracteristica, esta incluye un titulo y un valor, por ejempo **Pantalla:** IPS, podemos agregar varias caracteristicas
+![](./images/agregar-detalle.png)
+
+### Podemos editar las caracteristicas de los productos.
+![](./images/editar-detalle.png)
+
+## La aplicación tiene alertas por cada vez que se desee agregar un nuevo producto, eliminar un producto o eliminar una caracteristica.
