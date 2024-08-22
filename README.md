@@ -58,3 +58,12 @@ Pagina web de gestión de un inventario de productos hecha utilizando [Python](h
 ![](./images/editar-detalle.png)
 
 ## La aplicación tiene alertas por cada vez que se desee agregar un nuevo producto, eliminar un producto o eliminar una caracteristica.
+
+### Eliminar producto.
+![](./images/captura1.png)
+
+### Agregar producto.
+![](./images/captura2.png)
+
+### Eliminar caracteristica.
+![](./images/captura3.png)
