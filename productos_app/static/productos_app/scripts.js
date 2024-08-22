@@ -4,12 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (form) {
         form.addEventListener("submit", function(e) {
-            console.log("Formulario enviado"); // Para depuración
-
             // Obtener el valor del campo precio
             const precioInput = document.getElementById("id_precio"); // Asegúrate de que el ID sea correcto
             const precio = precioInput ? parseFloat(precioInput.value) : NaN;
-
             // Validar que el campo de precio solo acepte números y que el precio sea mayor a 0
             if (isNaN(precio) || precio <= 0) {
                 alert("Por favor, introduce un precio válido.");
