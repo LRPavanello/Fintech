@@ -48,6 +48,16 @@ Es fundamental contar con estos requisitos para poder correr el proyecto:
     http://127.0.0.1:8000/
     ```
 
+7. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
+
+    ```
+    sudo usermod -aG docker $USER
+    ```
+    ```
+    exec su -l $USER
+    ```
+    
+
 ## Una vez aquí se pueden realizar todas las acciones que permite la aplicación
 
 ### Lista de productos, podemos agregar mas productos, o bien, ver los detalles o eliminar productos
