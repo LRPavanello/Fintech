@@ -16,25 +16,33 @@ Pagina web de gestión de un inventario de productos hecha utilizando [Python](h
 - **Otros**: Bootstrap 5
 
 ## Requisitos
-
+Es fundamental contar con estos requisitos para poder correr el proyecto:
 - Docker
 - Docker Compose
 
 ## Instrucciones para Ejecutar el Proyecto
 
-1. Clona el repositorio:
-
+1. Ingresa al repositorio:
    ```
-   git clone https://github.com/joshuboshu/docker_project.git
    cd docker_project
     ```
 2. Ejecuta los comandos en una terminal
-
     ```
-    docker-compose up --build
+    docker-compose build 
     ```
-
-3. Accede al puerto 8000
+3. Realiza las migraciones correspondientes
+    ```
+    docker-compose run web python manage.py migrate
+    ```
+4. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
+    ```
+    docker-compose run web python manage.py createsuperuser
+    ```
+6. Finalmente, correremos el proyecto en el puerto 8000
+    ```
+    docker-compose up 
+    ```
+6. Accede al localhost
 
     ```
     http://127.0.0.1:8000/
