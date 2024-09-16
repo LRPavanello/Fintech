@@ -1,54 +1,54 @@
-
-# Aplicación web basica
+# Basic Web Application
 
 [![Python](https://img.shields.io/badge/Python-3.11+-yellow?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)](https://python.org)
-[![HTML](https://img.shields.io/badge/HTML-orange?style=for-the-badge&logo=html5&logoColor=white&labelColor=101010)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![CSS](https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css3&logoColor=white&labelColor=101010)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![HTML](https://img.shields.io/badge/HTML-orange?style=for-the-badge&logo=html5&logoColor=white&labelColor=101010)](https://developer.mozilla.org/en/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css3&logoColor=white&labelColor=101010)](https://developer.mozilla.org/en/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010)](https://developer.mozilla.org/en/docs/Web/JavaScript)
 
-Pagina web de gestión de un inventario de productos hecha utilizando [Python](https://python.org), [Django](https://www.djangoproject.com/), [bootstrap](https://getbootstrap.com/) y [Postgresql](https://www.postgresql.org/). La aplicación permite listar, agregar y eliminar productos, agregarles una descripción y marcar como disponibles o no disponibles, ademas se puede agregar mas de una caracteristicas a los productos.
+A web page for managing a product inventory made using [Python](https://python.org), [Django](https://www.djangoproject.com/), [Bootstrap](https://getbootstrap.com/), and [PostgreSQL](https://www.postgresql.org/). The application allows listing, adding, and deleting products, adding a description, and marking them as available or unavailable. Additionally, multiple features can be added to the products.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 - **Backend**: Django 5.1
-- **Frontend(Templates)**: HTML, CSS, JavaScript
-- **Base de Datos**: PostgreSQL 
-- **Otros**: Bootstrap 5
+- **Frontend (Templates)**: HTML, CSS, JavaScript
+- **Database**: PostgreSQL
+- **Others**: Bootstrap 5
 
-## Requisitos
-Es fundamental contar con estos requisitos para poder correr el proyecto:
+## Requirements
+
+It is essential to have the following requirements to run the project:
 - Docker
 - Docker Compose
 
-## Instrucciones para Ejecutar el Proyecto
+## Instructions to Run the Project
 
-1. Ingresa al repositorio:
+1. Navigate to the repository:
    ```
    cd docker_project
+   ```
+2. Run the commands in a terminal:
     ```
-2. Ejecuta los comandos en una terminal
+    docker-compose build
     ```
-    docker-compose build 
-    ```
-3. Realiza las migraciones correspondientes
+3. Apply the necessary migrations:
     ```
     docker-compose run web python manage.py migrate
     ```
-4. Puedes crear un super usuario (Opcional), en caso de que quieras manipular los datos desde el admin de Django
+4. You can create a superuser (Optional) if you want to manage the data from the Django admin interface:
     ```
     docker-compose run web python manage.py createsuperuser
     ```
-6. Finalmente, correremos el proyecto en el puerto 8000
+5. Finally, run the project on port 8000:
     ```
-    docker-compose up 
+    docker-compose up
     ```
-6. Accede al localhost
+6. Access the application at:
 
     ```
     http://127.0.0.1:8000/
     ```
 
-7. En caso de tener problemas de permisos, ejecuta los siguientes comandos y luego vuelve a ejecutar los anteriores
+7. If you encounter permission issues, run the following commands and then re-run the previous ones:
 
     ```
     sudo usermod -aG docker $USER
@@ -56,32 +56,31 @@ Es fundamental contar con estos requisitos para poder correr el proyecto:
     ```
     exec su -l $USER
     ```
-    
 
-## Una vez aquí se pueden realizar todas las acciones que permite la aplicación
+## Once here, you can perform all the actions allowed by the application
 
-### Lista de productos, podemos agregar mas productos, o bien, ver los detalles o eliminar productos
+### Product List: You can add more products, view details, or delete products.
 ![](./images/lista.png)
 
-### Podemos agregar un nuevo producto con una descripción y marcar como disponible, o bien, volver al inicio
+### Adding a New Product: You can add a new product with a description and mark it as available, or return to the home page.
 ![](./images/agregar.png)
 
-### Detalles del producto, podemos agregar caracteristicas y editarlas, en el inicio saldra la descripción a menos que le agreguemos caracteristicas al producto.
+### Product Details: You can add and edit features. On the home page, the description will be shown unless features are added to the product.
 ![](./images/detalles.png)
 
-### Podemos agregar una caracteristica, esta incluye un titulo y un valor, por ejempo **Pantalla:** IPS, podemos agregar varias caracteristicas
+### Adding a Feature: This includes a title and a value, e.g., **Screen:** IPS. Multiple features can be added.
 ![](./images/agregar-detalle.png)
 
-### Podemos editar las caracteristicas de los productos.
+### Editing Product Features: You can edit the features of products.
 ![](./images/editar-detalle.png)
 
-## La aplicación tiene alertas por cada vez que se desee agregar un nuevo producto, eliminar un producto o eliminar una caracteristica.
+## The application has alerts for adding a new product, deleting a product, or removing a feature.
 
-### Eliminar producto.
+### Delete Product:
 ![](./images/captura1.png)
 
-### Agregar producto.
+### Add Product:
 ![](./images/captura2.png)
 
-### Eliminar caracteristica.
+### Delete Feature:
 ![](./images/captura3.png)
