@@ -24,7 +24,7 @@ It is essential to have the following requirements to run the project:
 
 1. Navigate to the repository:
    ```
-   cd docker_project
+   cd Fintech
    ```
 2. Run the commands in a terminal:
     ```
