@@ -1,6 +1,20 @@
 h1 {
     margin-bottom: 20px; 
-    color: #ff0000; 
+    color: rgb(39, 165, 1); 
+}
+
+.portal-border {
+    border: 5px solid rgb(11, 168, 5); /* Cor da borda (azul) e largura da linha */
+    border-radius: 50px; /* Arredondamento da borda */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 15px rgba(1, 138, 35, 0.568); /* Adiciona um brilho ao redor */
+    background-color: #fff; /* Cor de fundo opcional */
+    height: 80vh; /* Altura ajustada ao tamanho da tela */
+}
+
+/* center name */
+.text-center {
+    text-align: center;
 }
 
 /* Botón para agregar producto */
