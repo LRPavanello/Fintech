@@ -28,19 +28,20 @@ It is essential to have the following requirements to run the project:
    ```
 2. Run the commands in a terminal:
     ```
-    docker-compose build
+    docker compose up --build
     ```
 3. Apply the necessary migrations:
     ```
-    docker-compose run web python manage.py migrate
+    docker compose run web python manage.py makemigrations
+    docker compose run web python manage.py migrate 
     ```
 4. You can create a superuser (Optional) if you want to manage the data from the Django admin interface:
     ```
-    docker-compose run web python manage.py createsuperuser
+    docker compose run web python manage.py createsuperuser
     ```
 5. Finally, run the project on port 8000:
     ```
-    docker-compose up
+    docker compose up or (docker compose up --build)
     ```
 6. Access the application at:
 

@@ -1,15 +1,15 @@
-{% extends 'productos_app/base.html' %}
+{% extends 'manager_app/base.html' %}
 {% load static %}
 
 {% block title %}Lista de Productos{% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'productos_app/lista.css' %}">
+    <link rel="stylesheet" href="{% static 'manager_app/lista.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="container mt-4">
-        <h1 class="mb-4">Lista de Accion</h1>
+        <h1 class="mb-4">Manager App</h1>
         <a href="{% url 'add_product' %}" class="btn btn-success mb-3">Agregar Producto</a>
         <div class="list-group">
             {% for producto in productos %}

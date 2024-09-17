@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'productos_app', # Aplicación del proyecto
+    'manager_app', # Aplicación del proyecto
     'widget_tweaks'
 ]
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'project_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'productos_app/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'manager_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'productos_app/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'manager_app/static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

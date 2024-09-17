@@ -8,7 +8,7 @@ def list_products(request):
     for producto in productos:
         # Permite mostrar hasta 5 características por producto en la página principal
         producto.caracteristicas = Caracteristica.objects.filter(producto=producto)[:5] 
-    return render(request, 'productos_app/lista.html', {'productos': productos})
+    return render(request, 'manager_app/lista.html', {'productos': productos})
 
 # Agregar productos
 def add_product(request):
@@ -21,7 +21,7 @@ def add_product(request):
     else:
         # Si no es una solicitud POST, se crea un formulario vacío
         form = ProductForm()
-    return render(request, 'productos_app/agregar.html', {'form': form})
+    return render(request, 'manager_app/agregar.html', {'form': form})
 
 # Eliminar productos
 def delete_product(request, pk):
@@ -37,7 +37,7 @@ def detail_product(request, id):
         'producto': producto,
         'caracteristicas': caracteristicas
     }
-    return render(request, 'productos_app/detalle.html', context)
+    return render(request, 'manager_app/detalle.html', context)
 
 # Agregar nuevas características al producto
 def add_caracteristica(request, producto_id):
@@ -54,7 +54,7 @@ def add_caracteristica(request, producto_id):
     else:
         # Si no es una solicitud POST, se crea un formulario vacío
         form = CaracteristicaForm()
-    return render(request, 'productos_app/add_caracteristica.html', {'form': form, 'producto': producto})
+    return render(request, 'manager_app/add_caracteristica.html', {'form': form, 'producto': producto})
 
 # Editar las características del producto
 def edit_caracteristica(request, caracteristica_id):
@@ -68,7 +68,7 @@ def edit_caracteristica(request, caracteristica_id):
     else:
         # Si no es una solicitud POST, se crea un formulario con los datos de la característica existente
         form = CaracteristicaForm(instance=caracteristica)
-    return render(request, 'productos_app/edit_caracteristica.html', {'form': form, 'caracteristica': caracteristica})
+    return render(request, 'manager_app/edit_caracteristica.html', {'form': form, 'caracteristica': caracteristica})
 
 # Eliminar características del producto
 def delete_caracteristica(request, id):
