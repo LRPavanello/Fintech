@@ -10,11 +10,11 @@
 {% block content %}
     <div class="container mt-4 text-center portal-border">
         <h1 class="mb-4">Manager App</h1>
-        <a href="{% url 'add_product' %}" class="btn btn-success mt-5 mb-3">Agregar nota</a>
+        <a href="{% url 'add_product' %}" class="btn btn-success mt-5 mb-3">Agregar Transacción</a>
         <div class="list-group">
             {% for producto in productos %}
-            <div class="list-group-item d-flex justify-content-between align-items-start border border-secondary rounded-3 mb-2 shadow-sm">
-                <div class="d-flex flex-column flex-grow-1">
+            <div class="list-group-item justify-content-between align-items-start box-border rounded-3 mb-4 shadow-sm">
+                <div class="d-flex flex-column flex-grow">
                     <h5 class="mb-1">{{ producto.nombre }}</h5>
                     
                     {% if producto.caracteristicas %}
@@ -30,14 +30,14 @@
                         <p class="mb-1 text-muted">{{ producto.descripcion }}</p>
                     {% endif %}
                     
-                    <small class="text-muted">Precio: ₲ {{ producto.precio }}</small>
+                    <small class="text-muted">Monto: ₲ {{ producto.precio }}</small>
                     {% if producto.disponible %}
-                        <span class="badge bg-success mt-2">Disponible</span>
+                        <span class="badge bg-success mt-2 ml-4 mr-4">Balance Positivo</span>
                     {% else %}
-                        <span class="badge bg-danger mt-2">No Disponible</span>
+                        <span class="badge bg-danger mt-2 ml-4 mr-4">Balane Negativo</span>
                     {% endif %}
                 </div>
-                <div class="d-flex flex-column align-items-center gap-2 h-100">
+                <div class="mt-4 align-items-center gap-2 h-100">
                     <a href="{% url 'detail_product' producto.id %}" class="btn btn-info">Detalles</a>
                     <a href="{% url 'delete_product' producto.id %}" class="btn btn-danger delete-product">Eliminar</a>
                 </div>

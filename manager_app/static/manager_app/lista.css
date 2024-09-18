@@ -12,6 +12,13 @@ h1 {
     height: 80vh; /* Altura ajustada ao tamanho da tela */
 }
 
+.box-border {
+    border-radius: 50px; /* Arredondamento da borda */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 15px rgba(1, 138, 35, 0.568); /* Adiciona um brilho ao redor */
+    background-color: #fff; /* Cor de fundo opcional */
+}
+
 /* center name */
 .text-center {
     text-align: center;
@@ -52,7 +59,7 @@ h1 {
 /* Estilo para los badges */
 .badge {
     font-size: 0.9rem; 
-    padding: 0.5rem; /* Espaciado interno */
+    padding: 0.5rem;
 }
 
 .btn-success {
