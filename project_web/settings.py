@@ -107,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Configuração da porta para o Render
+PORT = os.getenv('PORT', '8000')  
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
