@@ -23,6 +23,7 @@ services:
       - POSTGRES_NAME=fintech_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123456
+      - DATABASE_HOST=db
     depends_on:
       - db
 volumes:
