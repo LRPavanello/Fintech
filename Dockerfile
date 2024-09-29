@@ -26,5 +26,5 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
 
 # Comando para iniciar o Gunicorn
-CMD ["gunicorn", "project_web.wsgi:application", "--bind", "0.0.0.0:10000"]
+CMD ["gunicorn", "project_web.wsgi:application", "--bind", "0.0.0.0:8000"]
 
