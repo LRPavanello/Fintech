@@ -1,10 +1,9 @@
-
 FROM python:3.12-alpine
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Instala las dependencias necesarias
+# Instala as dependências necessárias
 RUN apk update && apk add --no-cache \
     libpq-dev \
     gcc \
@@ -14,11 +13,18 @@ RUN apk update && apk add --no-cache \
     libffi-dev \
     && rm -rf /var/cache/apk/*
 
-# Establece el directorio de trabajo en /app
+# Estabelece o diretório de trabalho em /app
 WORKDIR /app
 
-# Copia el archivo de requerimientos
+# Copia o arquivo de requisitos
 COPY ./requirements.txt ./
 
-# Instala las dependencias
+# Instala as dependências
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# Copia todo o código do projeto para o contêiner
+COPY . .
+
+# Comando para iniciar o Gunicorn
+CMD ["gunicorn", "project_web.wsgi:application", "--bind", "0.0.0.0:10000"]
+
