@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,15 +79,19 @@ WSGI_APPLICATION = 'project_web.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 # Base de dados em postgres
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DB_NAME', 'fintech_db'),  # Nome do banco de dados
+#         'USER': os.environ.get('DB_USER', 'postgres'),     # Usuário do banco de dados
+#         'PASSWORD': os.environ.get('DB_PASSWORD', '123456'),  # Senha do banco de dados
+#         'HOST': os.environ.get('DB_HOST', 'localhost'),     # Host do banco de dados
+#         'PORT': os.environ.get('DB_PORT', '5432'),          # Porta do banco de dados
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'fintech_db'),  # Nome do banco de dados
-        'USER': os.environ.get('DB_USER', 'postgres'),     # Usuário do banco de dados
-        'PASSWORD': os.environ.get('DB_PASSWORD', '123456'),  # Senha do banco de dados
-        'HOST': os.environ.get('DB_HOST', 'localhost'),     # Host do banco de dados
-        'PORT': os.environ.get('DB_PORT', '5432'),          # Porta do banco de dados
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
