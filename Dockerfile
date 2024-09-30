@@ -26,6 +26,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
 
 # Comando para iniciar o Gunicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "manager_app.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
+
 
 
