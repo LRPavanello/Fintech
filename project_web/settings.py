@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'manager_app', # Aplicación del proyecto
-    'widget_tweaks'
+    'manager_app',  # Aplicação do projeto
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -76,14 +76,14 @@ WSGI_APPLICATION = 'project_web.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-# Base de datos en postgres
+# Base de dados em postgres
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': os.environ.get('POSTGRES_NAME', 'fintech_db'),  # Nome do banco de dados
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),     # Usuário do banco de dados
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '123456'),  # Senha do banco de dados
         'HOST': 'localhost',
         'PORT': 5432,
     }
@@ -108,12 +108,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Configuração da porta para o Render
-PORT = int(os.environ.get("PORT", 8000))  
+PORT = int(os.environ.get("PORT", 8000))
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-es' # Configuracion del lenguaje en español
+LANGUAGE_CODE = 'es-es'  # Configuracion del lenguaje en español
 
 TIME_ZONE = 'UTC'
 
