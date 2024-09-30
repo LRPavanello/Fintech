@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME', 'fintech_db'),  # Nome do banco de dados
         'USER': os.environ.get('POSTGRES_USER', 'postgres'),     # Usuário do banco de dados
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '123456'),  # Senha do banco de dados
-        'HOST': 'db',
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': 5432,
     }
 }
