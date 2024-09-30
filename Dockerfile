@@ -14,7 +14,7 @@ RUN apk update && apk add --no-cache \
     && rm -rf /var/cache/apk/*
 
 # Estabelece o diretório de trabalho em /app
-WORKDIR /app
+WORKDIR /manager_app
 
 # Copia o arquivo de requisitos
 COPY ./requirements.txt ./
