@@ -85,3 +85,6 @@ It is essential to have the following requirements to run the project:
 
 ### Delete Feature:
 ![](./images/captura3.png)
+
+sudo chmod -R 755 /home/luisrpavanello/Dev/Fintech/data/db
+
